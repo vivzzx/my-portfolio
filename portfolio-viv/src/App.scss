@@ -90,6 +90,7 @@ body {
 				background-color: $projects;
 				color: $white;
 				height: 100vh;
+				padding: 50px 200px;
 
 				h3 {
 					padding: 50px;
@@ -100,19 +101,21 @@ body {
 				.showProjects {
 					//1background-color: #aa4b6b;
 					display: grid;
-					grid
+					grid-template-columns: 1fr 1fr 1fr;
+					grid-gap: 20px;
 
 					.projectItem {
-						flex-basis: 30%;
+						/* flex-basis: 30%;
 						flex-shrink: 1;
-						flex-grow: 1;
+						flex-grow: 1; */
+						width: 100%;
 						
 					@media screen and (max-width: 768px) {
 						
 					}
 
 						img {
-							width: 80%;
+							width: inherit;
 						}
 					}
 				}
