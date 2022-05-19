@@ -112,26 +112,75 @@ body {
 					grid-template-columns: 1fr 1fr 1fr;
 					//grid-auto-rows: auto; para definir o tamanho das implicit rows
 					grid-gap: 20px;
-				@media screen and (max-width: $breakpoint-tablet) {
-					grid-template-columns: 1fr 1fr;
-				}
-				@media screen and (max-width: $breakpoint-phone) {
-					grid-template-columns: 1fr;
-					padding: 0 20px;
-				}
-					.projectItem {
-						/* flex-basis: 30%;
-						flex-shrink: 1;
-						flex-grow: 1; */
-						width: 100%;
-					@media screen and (max-width: $breakpoint-phone) {
-						width: 90%;
-						margin: 0 auto;
+					@media screen and (max-width: $breakpoint-tablet) {
+						grid-template-columns: 1fr 1fr;
 					}
-					
+					@media screen and (max-width: $breakpoint-phone) {
+						grid-template-columns: 1fr;
+						padding: 0 20px;
+					}
+					.card {
+						position: relative;
+						display: block;
+						height: 100%;
+						overflow: hidden;
+						@media screen and (max-width: $breakpoint-phone) {
+							width: 90%;
+							margin: 0 auto; 
+						}
+						&:hover {
+							.cardOverlay {
+								transform: translateY(0);
+							}
+							.cardHeader {
+								transform: translateY(0);
+							}
+						}
+						
+						.cardOverlay {
+							background-color: $white;
+							color: #000;
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							right: 0;
+							transform: translateY(70%);
+							border-radius: 20px 0 0 0;
+							z-index: 1;
+							transition: .2s ease-in-out;
+							height: 50%;
+							
+							.cardArc {
+								width: 80px;
+								height: 80px;
+								position: absolute;
+								bottom: 100%;
+								right: 0;
+								z-index: 1;							
+								path {
+									fill: $white;
+									d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+								}
+							}
+							.cardHeader {
+								position: relative;
+								transform: translateY(-100%);
+								border-radius: 25px;
+								transition: .2s ease-in-out;
+							}
 
+							.cardDescription {
+								overflow: hidden;
+							}
+						}
 						img {
-							width: inherit;
+							width: 100%;
+							height: auto;
+							filter: grayscale(70%);
+							transition: .5s;
+							&:hover {
+								filter: none;
+							}
 						}
 					}
 				}

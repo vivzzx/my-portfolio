@@ -78,10 +78,13 @@ function App() {
 							{
 								projects.map(item => {
 									return (
-										<div className='projectItem'>
-											<p>{item.name}</p>
+										<div className='card'>
 											<img src={item.image} alt={item.name} />
-											<p>{item.description}</p>
+											<div className='cardOverlay'> 
+												<svg className="cardArc" xmlns="http://www.w3.org/2000/svg"><path /></svg>  
+												<p className='cardHeader'>{item.name}</p>
+												<p className='cardDescription'>{item.description}</p>
+											</div>
 										</div>)
 								})
 							}
