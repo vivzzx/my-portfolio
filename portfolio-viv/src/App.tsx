@@ -69,16 +69,18 @@ function App() {
 							<div className='button'>Contact Me Now</div>
 						</div>
 						<div className='heroImg'>
-							<img src={photo} alt='this is me' />	
+							<div className='mask'>
+								<img src={photo} alt='this is me' />	
+							</div>
 						</div>
 					</section>
 					<section className='projects'>
 						<h3>My Projects</h3>
 						<div className='showProjects'>
 							{
-								projects.map(item => {
+								projects.map((item, index) => {
 									return (
-										<div className='card'>
+										<div className='card' key={index}>
 											<img src={item.image} alt={item.name} />
 											<div className='cardOverlay'> 
 												<svg className="cardArc" xmlns="http://www.w3.org/2000/svg"><path /></svg>  
@@ -90,7 +92,7 @@ function App() {
 							}
 						</div>
 					</section>
-					<section  className='bg'>
+					<section  className='bg about'>
 						<h3>Why me?</h3>
 						<p>As a professional I am very commited, responsible and dedicated.</p>
 						<div className='button'> Learn More </div>
