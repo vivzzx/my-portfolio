@@ -1,6 +1,9 @@
 import React from 'react';
 import logo from './assets/images/viv_icon.svg';
-import photo from './assets/images/pccover.jpg'
+import photo from './assets/images/pccover.jpg';
+import blob1 from './assets/images/blob1.svg';
+import blob2 from './assets/images/blob2.svg';
+import blob3 from './assets/images/blob3.svg';
 import './App.scss';
 
 function App() {
@@ -60,19 +63,30 @@ function App() {
 				</nav>
 				</header>
 				<main>
-					<section className='hero bg'>
-						<div className='heroTxt'>
+					<section className='hero'>
+
 							<h1>Hello, 
 								<br />I am Viv 
 								<br />a web developer</h1>
 							<p>I'm a Front End Developer based in Germany</p>
-							<div className='button'>Contact Me Now</div>
-						</div>
+							<div>
+								<div className='button'>Contact Me Now</div>
+							</div>
+							<div className='blobsContainer'>
+								<img src={blob1} className='blob1' alt='blobs!' />
+								<img src={blob2} className='blob2' alt='blobs!' />
+								<img src={blob3} className='blob3' alt='blobs!' />
+							</div>
+							
+						
+						{/*
 						<div className='heroImg'>
-							<div className='mask'>
+							<div className=''>
+								<img src={blob1} className='blob1' alt='blobs!' />					
 								<img src={photo} alt='this is me' />	
 							</div>
 						</div>
+						*/}
 					</section>
 					<section className='projects'>
 						<h3>My Projects</h3>

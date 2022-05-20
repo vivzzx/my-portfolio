@@ -4,9 +4,9 @@ $transpWhite: #ffffff3e;
 $background: #29626b;
 $pink: #aa4b6b;
 $projects: #000000;
-$primary: #FF3C7E;
+$primary: #d0246c;
 $secondary: #784BA0;
-$terciary: #2B86C5;
+$terciary: #0b3c5f;
 
 //breakpoints
 $breakpoint-phone: 640px;
@@ -35,7 +35,7 @@ body {
 	display: flex;
 	justify-content: center;
 	background-color: $background;
-
+	//z-index: -1;
 
 	.container {
 		max-width: 1440px;
@@ -47,6 +47,7 @@ body {
 			display: flex;
 			align-items: center;
 			padding-left: 50px;
+			z-index: 1;
 			.blur {
 				backdrop-filter: blur(10px);
 				-webkit-backdrop-filter: blur(10px);
@@ -86,65 +87,112 @@ body {
 		main {
 			.hero {
 				min-height: $height;
+				z-index: 1;
+				position: relative;
 				display: flex;
-				justify-content: space-between;
-				.heroTxt{
-					color: $white;
-					width: 60%;
-					text-align: left;
-					padding: 0 50px;
-					h1 {
-						font-size: 64px;
-						margin-bottom: 20px;
-						font-family: 'Epilogue', sans-serif;
-						font-weight: 700;
-						letter-spacing: .1rem;
+				flex-direction: column;
+				text-align: left;
+				padding: 20px 100px;
+				color: $white;
+				//justify-content: space-between;
+				background-color: $primary;
+				background: linear-gradient(225deg, $primary 0%, $secondary 50%, $terciary 100%);
+				animation: gradient 1s ease infinite;
+
+				h1 {
+					font-size: 96px;
+					margin-bottom: 20px;
+					font-family: 'Epilogue', sans-serif;
+					font-weight: 700;
+					letter-spacing: .2rem;
+					line-height: 1.1em;
+				}
+				p {
+					font-size: 24px;
+					font-family: 'Oxygen', sans-serif;
+					font-weight: 300;
+					letter-spacing: .56rem;
+					margin-bottom: 50px;
+				}
+				&::before {
+					content: "";
+					z-index: -1;
+					position: absolute;
+					height: 100%;
+					width: 100%;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					filter: blur(2px);
+					background: 
+						url(./assets/images/luca-bravo-XJXWbfSo2f0-unsplash.jpg) center center;
+					background-size: cover;	
+					//background-clip: padding-box;					
+					opacity: .2;				
+				}
+				.blobsContainer {
+					z-index: -1;
+					position: absolute;
+					opacity: .75;
+					object-fit: fill;
+					width: 100%;
+					height: 100%;
+					overflow: hidden;
+					left: 0;
+					top: 0;
+
+					.blob1 {
+						position: absolute;
+						left: -185px;
+						top: 72px;
 					}
-					p {
-						font-size: 24px;
-						font-family: 'Oxygen', sans-serif;
-						font-weight: 300;
-						letter-spacing: .15rem;
+					.blob2 {
+						position: absolute;
+						left: 598px;
+						top: 366px;
+					}
+					.blob3 {
+						position: absolute;
+						left: 1035px;
+						top: -137px;
 					}
 				}
 				.heroImg {
-					width: 670px;
+					/* position: absolute;
+					top: 0;
+					right: 0;
+					left: 0;
+					bottom: 0;
+					margin: 0 auto;
+					height: inherit;
+					width: inherit;
+					
+					
+					max-width: 1440px;
+					//animation: gradient 2s ease infinite;
+					//min-width: 80vw;
 					transition: all 1s;
-					height: $height;
+					z-index: 1;
+					
 					//transform: translateX(-20%);
-					.mask {
-						object-fit: fill;
-						overflow: hidden;
-						height: $height;
-					}
-					/* &:before {
+					
+					&:before {
 						content: "";
-						height:20px;
+						z-index: -1;
 						position: absolute;
-						right: 10px;
-						width: 670px;
-						background-color: red;
-						transition: all 1s;
-						transform: translateX(-100%);
-						
-					} */
-					/* &::after {
-						content: "";
-						transform: translateX(100%);
-					} */
-					img {
-						height: calc($height * 1.4);
-						transform: translateX(1%) translateY(-5%);
-						transition: all 1s;
-						border-radius: 50%;
-						opacity: 75%;	
-						&:hover {
-							transform: translateY(-4.7%);
-							//transform: translateY(-1%);
-							opacity: 60%;
-							transition: all 2s;
-						}
-					}
+						height: inherit;
+						width: inherit;
+						right: 0;
+						top: 0;
+						bottom: 0;
+						left: 0;
+						filter: blur(2px);
+						background: 
+							url(./assets/images/luca-bravo-XJXWbfSo2f0-unsplash.jpg) center center;
+						background-size: cover;						
+						opacity: .2;						
+					}  */
 
 
 				}
@@ -270,6 +318,12 @@ body {
 		}
 	}
 }
+
+//Auxiliary styles
+.z1 {
+	z-index: 1;
+}
+
 
 .bg {
 	background-color: $primary;
